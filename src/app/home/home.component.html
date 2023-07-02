@@ -1,0 +1,13 @@
+<div class="ViewingTheTable">
+  <table>
+    <tr *ngFor="let item of GETtask" [ngClass]="{
+      'priority-red': item.priority_level === 1,
+      'priority-blue': item.priority_level === 2,
+      'priority-green': item.priority_level === 3
+    }" [class.even-row]="item.priority_level % 2 === 0" (dblclick)="onRowDoubleClick(item)">
+      <td>{{ item.name_task }}</td>
+      <td>{{ item.description }}</td>
+      <td>{{ item.priority_level }}</td>
+    </tr>
+  </table>
+</div>

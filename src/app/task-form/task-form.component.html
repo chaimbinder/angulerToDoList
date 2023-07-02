@@ -1,0 +1,21 @@
+<div *ngIf="isPopup">
+  <form [formGroup]="taskForm" (ngSubmit)="submitForm()">
+
+    <label for="name_task">Task Name:</label>
+    <input type="text" id="name_task" formControlName="name_task" required>
+
+    <label for="description">Task Description:</label>
+    <input type="text" id="description" formControlName="description" required>
+
+    <label for="priority_level">Priority Level:</label>
+    <select id="priority_level" formControlName="priority_level" required>
+      <option value="1">High</option>
+      <option value="2">Medium</option>
+      <option value="3">Low</option>
+    </select>
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
+<button (click)="popupAddTask()">Add Task</button>
+
